@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {JournalEntriesService} from '../service/journal-entries.service'
+import {Observable} from 'rxjs/Observable'
 
 @Component({
   selector: 'app-entry-list',
@@ -11,7 +12,7 @@ export class EntryListComponent implements OnInit {
   constructor(public journalEntriesService:JournalEntriesService ) { }
 
   ngOnInit() {
-    this.entries = this.journalEntriesService.getList()
+    this.journalEntriesService.getList().subscribe(result => this.entries=result)
   }
 
 }

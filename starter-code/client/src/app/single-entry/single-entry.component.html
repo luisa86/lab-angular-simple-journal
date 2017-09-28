@@ -1,0 +1,9 @@
+<h1>Single Entry</h1>
+
+<a [routerLink]="['']">Back To List</a>
+
+<div *ngIf="entry">
+  <h3>{{entry.title}}</h3>
+  <h3>{{entry.date}}</h3>
+  <p>{{entry.content}}</p>
+</div>
